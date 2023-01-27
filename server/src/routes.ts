@@ -4,11 +4,6 @@ import { FastifyInstance } from "fastify";
 import dayjs from 'dayjs';
 
 export async function appRoutes(app: FastifyInstance){
-  app.get('/', async () => {
-    const habit = prisma.habit.findMany()
-    return habit;
-  });
-  
   app.post('/habits', async (request) => {
     const createHabitBody = z.object({
       title: z.string(),
@@ -59,7 +54,7 @@ export async function appRoutes(app: FastifyInstance){
       }
     })
 
-    const day = await prisma.day.findFirst({
+    const day = await prisma.day.findUnique({
       where: {
         date: parsedDate.toDate(),
       },
@@ -68,14 +63,14 @@ export async function appRoutes(app: FastifyInstance){
       }
     })
 
-    const completedhabits = day?.dayHabits.map(dayHabit => {
+    const completedHabits = day?.dayHabits.map(dayHabit => {
       return dayHabit.habit_id
     })
 
     return {
       possibleHabits,
       day,
-      completedhabits,
+      completedHabits,
     }
   })
 }

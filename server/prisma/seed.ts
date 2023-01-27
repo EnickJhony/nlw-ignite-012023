@@ -11,9 +11,12 @@ const secondHabitCreationDate = new Date('2023-01-03T03:00:00.000')
 const thirdHabitId = 'fa1a1bcf-3d87-4626-8c0d-d7fd1255ac00'
 const thirdHabitCreationDate = new Date('2023-01-08T03:00:00.000')
 
-async function run() {
-  await prisma.habit.deleteMany();
-  await prisma.day.deleteMany();
+async function main() {
+
+  await prisma.dayHabit.deleteMany()
+  await prisma.habitWeekDays.deleteMany()
+  await prisma.habit.deleteMany()
+  await prisma.day.deleteMany()
 
   /**
    * Create habits
@@ -116,7 +119,7 @@ async function run() {
   ])
 }
 
-run()
+main()
   .then(async () => {
     await prisma.$disconnect()
   })
