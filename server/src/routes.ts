@@ -148,6 +148,4 @@ export async function appRoutes(app: FastifyInstance){
     `
     return summary
   })
-}
-
-// 35m
+} 
