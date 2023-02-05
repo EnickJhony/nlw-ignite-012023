@@ -14,5 +14,3 @@ export function App() {
     </div>
   )
 }
-
-// 1h12

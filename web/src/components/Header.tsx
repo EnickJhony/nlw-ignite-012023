@@ -36,6 +36,3 @@ export function Header() {
     </div>
   )
 }
-
-
-// 1h05
