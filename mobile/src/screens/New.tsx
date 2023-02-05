@@ -35,12 +35,12 @@ export function New(){
         </Text>
 
         <TextInput
-          className="h-12 pl-4 rounded-lg mt-3 bg-zinc-800 text-white focus:border-2 focus:border-green-600"
+          className="h-12 pl-4 rounded-lg mt-3 bg-zinc-700 text-white border-2 border-zinc-800 focus:border-green-600"
           placeholder='Exercicios, dormir bem, etc...'
           placeholderTextColor={colors.zinc[400]}
         />
 
-        <Text className="mt-6 font-semibold text-white text-base">
+        <Text className="mt-6 mb-4 font-semibold text-white text-base">
           Qual a recorrência
         </Text>
 
